@@ -58,7 +58,7 @@ class AttendanceManagementPage extends StatelessWidget {
           );
         },
         dowBuilder: (context, day) {
-          final koreanWeekdays = ['월', '화', '수', '목', '금', '토', '일'];
+          final koreanWeekdays = ['월', '화', '수', '목', '금', '토', '금금'];
           return Center(
             child: Text(
               koreanWeekdays[day.weekday - 1], // 1(월)~7(일)

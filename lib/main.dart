@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
           elevation: 0,
+          scrolledUnderElevation: 0,
           systemOverlayStyle: SystemUiOverlayStyle.dark, // 상태 표시줄 아이콘 색상 등을 고정
         ),
         scaffoldBackgroundColor: Colors.white, // 전체 배경색 지정 (원하는 색으로 변경)

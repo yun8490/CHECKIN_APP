@@ -27,12 +27,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       systemOverlayStyle: SystemUiOverlayStyle.dark,
       title: Container(
         alignment: Alignment.centerLeft,
-        padding: const EdgeInsets.only(left: 16),
-        // child: Image.asset(
-        //   'assets/check_logo.2.png', // ✅ assets 폴더 경로 포함
-        //   width: 60,
-        //   height: 60, // 원하는 높이로 조정
-        // ),
+        padding: const EdgeInsets.only(left: 8, top: 8),
+        child: Image.asset(
+          'assets/logo3.png', // ✅ assets 폴더 경로 포함
+          width: 70,
+          height: 70, // 원하는 높이로 조정
+        ),
       ),
       actions: [
         Padding(

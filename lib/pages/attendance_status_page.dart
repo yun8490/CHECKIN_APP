@@ -9,7 +9,9 @@ class AttendanceStatusPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // 상단에 CustomAppBar 사용
+      backgroundColor: Color(0xFFf3f4f6),
       appBar: AppBar(
+        backgroundColor: Color(0xFFf3f4f6),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_rounded, color: Colors.black87),
           onPressed: () {
@@ -37,8 +39,10 @@ class AttendanceStatusPage extends StatelessWidget {
 
   // ------------------ 차시별 출석률(지원금) ------------------
   Widget _buildSessionAttendanceCard() {
+    Color progressColor = Color(0xFF3374F6); // 파란색
     return Card(
       color: Colors.white,
+      elevation: 0, // 그림자 제거
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -50,13 +54,33 @@ class AttendanceStatusPage extends StatelessWidget {
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
-            _buildProgressRow(label: '1차시', value: 1.0, percentText: '100%'),
+            _buildProgressRow(
+              label: '1차시',
+              value: 1.0,
+              percentText: '100%',
+              progressColor: progressColor,
+            ),
             const SizedBox(height: 12),
-            _buildProgressRow(label: '2차시', value: 0.85, percentText: '85%'),
+            _buildProgressRow(
+              label: '2차시',
+              value: 0.85,
+              percentText: '85%',
+              progressColor: progressColor,
+            ),
             const SizedBox(height: 12),
-            _buildProgressRow(label: '3차시', value: 0.75, percentText: '75%'),
+            _buildProgressRow(
+              label: '3차시',
+              value: 0.75,
+              percentText: '75%',
+              progressColor: progressColor,
+            ),
             const SizedBox(height: 12),
-            _buildProgressRow(label: '4차시', value: 0.65, percentText: '65%'),
+            _buildProgressRow(
+              label: '4차시',
+              value: 0.65,
+              percentText: '65%',
+              progressColor: progressColor,
+            ),
             const SizedBox(height: 16),
             const Text(
               '예상 수령 금액: 320,000원',
@@ -70,8 +94,10 @@ class AttendanceStatusPage extends StatelessWidget {
 
   // ------------------ 수업별 출석률(학점) ------------------
   Widget _buildCourseAttendanceCard() {
+    Color progressColor = Colors.green; // 초록색
     return Card(
       color: Colors.white,
+      elevation: 0, // 그림자 제거
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -87,24 +113,28 @@ class AttendanceStatusPage extends StatelessWidget {
               label: 'SW전공인턴십실습프로젝트(2학점)',
               value: 0.3,
               percentText: '30%',
+              progressColor: progressColor,
             ),
             const SizedBox(height: 12),
             _buildProgressRow(
               label: 'SW전공인턴십실습프로젝트(3학점)',
               value: 0.25,
               percentText: '25%',
+              progressColor: progressColor,
             ),
             const SizedBox(height: 12),
             _buildProgressRow(
               label: 'SW전공인턴십실습프로젝트(4학점)',
               value: 0.4,
               percentText: '40%',
+              progressColor: progressColor,
             ),
             const SizedBox(height: 12),
             _buildProgressRow(
               label: 'SW전공인턴십실습프로젝트(5학점)',
               value: 0.7,
               percentText: '70%',
+              progressColor: progressColor,
             ),
           ],
         ),
@@ -114,8 +144,10 @@ class AttendanceStatusPage extends StatelessWidget {
 
   // ------------------ 전체 출석률 ------------------
   Widget _buildTotalAttendanceCard() {
+    Color progressColor = Colors.red; // 빨간색
     return Card(
       color: Colors.white,
+      elevation: 0, // 그림자 제거
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -131,6 +163,7 @@ class AttendanceStatusPage extends StatelessWidget {
               label: '전체 출석률',
               value: 1.0,
               percentText: '100%',
+              progressColor: progressColor,
             ),
             const SizedBox(height: 16),
             // 출석/지각/결석 정보
@@ -171,6 +204,7 @@ class AttendanceStatusPage extends StatelessWidget {
     required String label,
     required double value,
     required String percentText,
+    required Color progressColor,
   }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -186,7 +220,7 @@ class AttendanceStatusPage extends StatelessWidget {
                   value: value,
                   minHeight: 8,
                   backgroundColor: Colors.grey.shade300,
-                  color: Colors.blue,
+                  color: progressColor,
                 ),
               ),
             ),

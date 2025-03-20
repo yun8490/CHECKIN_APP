@@ -61,6 +61,10 @@ flutter:
     - assets/check_logo.2.png
     - assets/flower.png
     - assets/flower2.png
+    - assets/logo.png
+    - assets/logo2.png
+    - assets/logo3.png
+    - assets/logo4.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -82,7 +86,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family: TossProductSans
+      fonts:
+        - asset: assets/SpoqaHanSansNeo-Regular.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

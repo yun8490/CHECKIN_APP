@@ -63,9 +63,9 @@ class _HomePageState extends State<HomePage> {
         onNotificationsPressed: () {
           Navigator.pushNamed(context, '/alarm');
         },
-        onProfilePressed: () {
-          Navigator.pushNamed(context, '/profile');
-        },
+        // onProfilePressed: () {
+        //   Navigator.pushNamed(context, '/profile');
+        // },
         titleText: '',
       ),
       body: SingleChildScrollView(
@@ -136,8 +136,9 @@ class _HomePageState extends State<HomePage> {
                             child: const Text(
                               '출석',
                               style: TextStyle(
+                                  fontFamily: 'SpoqaHanSans',
                                   fontSize: 16,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w600,
                                   color: Color(0xFF3374F6)),
                             ),
                           ),
@@ -234,7 +235,7 @@ class _HomePageState extends State<HomePage> {
                       child: GestureDetector(
                         // 클릭 이벤트 추가
                         onTap: () {
-                          Navigator.pushNamed(context, '/info'); // 페이지 이동
+                          Navigator.pushNamed(context, '/profile'); // 페이지 이동
                         },
                         child: Container(
                           width: 55,
